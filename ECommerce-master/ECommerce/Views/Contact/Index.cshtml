@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form>
+    <table>
+        <tr>
+            <td>Adınız</td>
+            <td><input type="text" id="Name" style="width:100%" /></td>
+        </tr>
+        <tr>
+            <td>Email Adresi</td>
+            <td><input type="text" id="EMail" style="width:100%" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <textarea rows="4" cols="50" id="Message" placeholder="Mesajınızı buraya giriniz" style="width:100%" > </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Kaydet" onclick="ECommerce.Page.Contact.Save();"/>
+            </td>
+        </tr>
+    </table>
+    
+    
+    
+    
+
+</form>
+

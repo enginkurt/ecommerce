@@ -1,0 +1,31 @@
+﻿@model ProductUpdateViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<br />
+<div class="card bg-success text-white">
+    <div class="card-body">
+        <h4 style="float:left">Ürün Güncelleme</h4>
+    </div>
+</div>
+<br />
+<form asp-controller="Product" asp-action="Edit" method="post">
+    <div class="form-group">
+        <b>Ürün Adı</b>
+        <input asp-for="Product.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <b>Açıklama</b>
+        <textarea asp-for="Product.Description" class="form-control" rows="10"></textarea>
+    </div>
+    <div class="form-group">
+        <b>Kategori</b>
+        <select asp-for="Product.CategoryId" class="form-control" asp-items="@(new SelectList(Model.Categories,"Id","Name"))"> </select>
+    </div>
+    <input type="hidden" asp-for="Product.Id" />
+    <input type="hidden" asp-for="Product.StateId" />
+    <input type="hidden" asp-for="Product.CreateDate" />
+    <div class="col-md-12">
+        <input type="submit" value="Güncelle" class="btn btn-xs btn-success btn-block" />
+    </div>
+</form>

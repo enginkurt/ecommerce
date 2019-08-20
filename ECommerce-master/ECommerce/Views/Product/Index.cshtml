@@ -1,0 +1,38 @@
+﻿@model Product
+@{await Html.RenderPartialAsync("_Partial_Categories");}
+
+<div>
+    <div class="card bg-info text-white">
+        <div class="card-body">
+            <h4 style="float:left">@Model.Name</h4>
+        </div>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td><b>Kategori</b></td>
+                <td>@Model.Category.Name</td>
+            </tr>
+            <tr>
+                <td><b>Tarih</b></td>
+                <td>@Model.CreateDate.ToShortDateString()</td>
+            </tr>
+            <tr>
+                <td><b>Ürün Durumu</b></td>
+                <td>@Model.State.Name</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>
+                        @Model.Description
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a class="btn btn-success btn-block" href="@Url.Action("Edit", "Product",new {@id=Model.Id })">Ürünü Güncelle</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
